@@ -1,0 +1,66 @@
+/* ROBOT.GIF from Giphy - https://giphy.com/gifs/robot-cinema-4d-eyedesyn-3o7abtn7DuREEpsyWY */
+
+html {
+  box-sizing: border-box;
+}
+
+body{
+  margin: 10px;
+  background: #45badd;
+}
+
+.container{
+  height:100vh; /*viewport height(for Dynamic scaling)*/
+  width: 100vw;  /*viewport width*/
+  display: flex;
+  flex-direction: column; /*when we have 2 items we need not to put them left/right, it will be top/bottom as in a column*/
+  justify-content: center;
+  align-items: center; /*(align our items horizontally and vertically)*/
+  background: url('./robot.gif');
+  background-size: contain;  /*image will be fully visible on screen*/
+  background-position: left center;
+  background-repeat: no-repeat; /*Only need to happen once*/
+}
+
+button{
+   cursor:pointer;
+   /*(providesdefaulthandwhentheuserhover'sthecursor)*/outline: none;
+   /*bydefaultwhenwehoverbuttonthentheoutlineenhancesbutbythisitwillnothappen*/width: 200px;
+   height: 50px;
+   font-family: 'Courier New', Courier, monospace;
+   font-size: 20px;
+   color: white;
+   background: #ff3482;
+   border:none;
+   border-radius:5px;
+   box-shadow: 2px 2px 20px 10px rgb(0,0,0, 0.2);  /*(horizontal-offset(shadow will go 2px to the right), (vertical offset(will go 2px down), (blur shadow), (shadow spread from the button), (shadow blur)*/
+}
+
+button:hover{
+  filter: brightness(95%);
+  /*5% darker when I hover over*/
+}
+
+button:active{
+  transform: scale(0.98); /*my button will get smaller(clicked inside) when I click*/
+}
+
+button:disabled{
+  cursor: default;
+  filter: brightness(30%);
+}
+
+/* Media Queries: Tablet or smaller */
+@media screen and (max-width: 1000px){
+  .container{
+    background-position: center;
+    background-size: cover;
+  }
+
+  button{
+    box-shadow: 5px 5px 30px 20px rgba(0,0,0,0.5);
+  }
+}
+
+
+
